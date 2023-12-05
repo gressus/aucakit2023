@@ -17,20 +17,20 @@
             time: "19:00",
             image: "swanLake.jpg",
         },
-        // {
-        //     title: "Спартак",
-        //     subtitle: "Балет Арама Хачатуряна в 3-х актах",
-        //     date: "January 3, 2024",
-        //     time: "19:00",
-        //     image: "spartacus.jpg",
-        // },
-        // {
-        //     title: "Ромео и Джульетта",
-        //     subtitle: "Балет в 3-х актах на музыку С. С. Прокофьева",
-        //     date: "January 4, 2024",
-        //     time: "19:00",
-        //     image: "romeo.jpg",
-        // }
+        {
+            title: "Спартак",
+            subtitle: "Балет Арама Хачатуряна в 3-х актах",
+            date: "January 3, 2024",
+            time: "19:00",
+            image: "spartacus.jpg",
+        },
+        {
+            title: "Ромео и Джульетта",
+            subtitle: "Балет в 3-х актах на музыку С. С. Прокофьева",
+            date: "January 4, 2024",
+            time: "19:00",
+            image: "romeo.jpg",
+        }
         // Add more events as needed
     ];
 
