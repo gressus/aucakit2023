@@ -3,7 +3,7 @@
   import { Deta } from 'deta';
 
   // Инициализация Deta Base
-  const deta = Deta("c08f3qnqxes_RUQwJXeiwU6wPGn8uspiknPeUpBcfKFZ");
+  const deta = Deta("c08f3qnqxes_EgznwZB5c3C5TATsgsE2ED8bPwY5GYet");
   const db = deta.Base('events');
 
   let performance = {
