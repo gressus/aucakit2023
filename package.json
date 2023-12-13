@@ -3,7 +3,7 @@
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
-		"dev": "vite dev",
+		"dev": "vite dev --port 3000",
 		"build": "vite build",
 		"preview": "vite preview"
 	},
@@ -12,6 +12,9 @@
 		"@sveltejs/kit": "^1.27.4",
 		"svelte": "^4.2.7",
 		"vite": "^4.4.2"
+	},
+	"dependencies": {
+		"deta": "next"
 	},
 	"type": "module"
 }

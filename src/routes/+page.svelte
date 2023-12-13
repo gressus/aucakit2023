@@ -2,71 +2,99 @@
   import { onMount, tick } from 'svelte';
 
   // Define an array of upcoming events
-    const events = [
-        {
-            title: "Щелкунчик",
-            subtitle: "Балет в 2-х актах на музыку П. И. Чайковского",
-            date: "January 1, 2024",
-            time: "18:00",
-            image: "theNutcracker.jpg",
-        },
-        {
-            title: "Лебединое озеро",
-            subtitle: "Балет в 4-х актах на музыку П. И. Чайковского",
-            date: "January 2, 2024",
-            time: "19:00",
-            image: "swanLake.jpg",
-        },
-        {
-            title: "Спартак",
-            subtitle: "Балет Арама Хачатуряна в 3-х актах",
-            date: "January 3, 2024",
-            time: "19:00",
-            image: "spartacus.jpg",
-        },
-        {
-            title: "Ромео и Джульетта",
-            subtitle: "Балет в 3-х актах на музыку С. С. Прокофьева",
-            date: "January 4, 2024",
-            time: "19:00",
-            image: "romeo.jpg",
-        }
-        // Add more events as needed
-    ];
+    // const events = []
+
+  // import { Deta } from 'deta';
+  // const deta = Deta("c08f3qnqxes_RUQwJXeiwU6wPGn8uspiknPeUpBcfKFZ");
+  // const db = deta.Base('events'); // Make sure this matches your actual base name
+
+  // let events = [];
+
+  // fetchEvents(); // Fetch events when the script loads
+
+  // async function fetchEvents() {
+  //   try {
+  //     const result = await db.fetch(); // Fetch all events from the base
+  //     events = result.items;
+  //     console.log(events);
+  //     currentEvent = events[0]
+  //   } catch (error) {
+  //     console.error('Error fetching events:', error);
+  //   }
+  // }
+
+  	export let data;    
+    let events = data.events;
+
+    let currentEvent = {}
+    currentEvent = events[0]
+
+    // const events = [
+    //     {
+    //         title: "Щелкунчик",
+    //         subtitle: "Балет в 2-х актах на музыку П. И. Чайковского",
+    //         date: "January 1, 2024",
+    //         time: "18:00",
+    //         image: "theNutcracker.jpg",
+    //     },
+    //     {
+    //         title: "Лебединое озеро",
+    //         subtitle: "Балет в 4-х актах на музыку П. И. Чайковского",
+    //         date: "January 2, 2024",
+    //         time: "19:00",
+    //         image: "swanLake.jpg",
+    //     },
+    //     {
+    //         title: "Спартак",
+    //         subtitle: "Балет Арама Хачатуряна в 3-х актах",
+    //         date: "January 3, 2024",
+    //         time: "19:00",
+    //         image: "spartacus.jpg",
+    //     },
+    //     {
+    //         title: "Ромео и Джульетта",
+    //         subtitle: "Балет в 3-х актах на музыку С. С. Прокофьева",
+    //         date: "January 4, 2024",
+    //         time: "19:00",
+    //         image: "romeo.jpg",
+    //     }
+    //     // Add more events as needed
+    // ];
 
     let currentIndex = 0;
 
-    function updateEvent() {
-      currentEvent = events[currentIndex]
-        // // Get the event container
-        // const eventContainer = document.getElementById("event-container");
+  //   function updateEvent() {
+  //     currentEvent = events[currentIndex]
+  //       // // Get the event container
+  //       // const eventContainer = document.getElementById("event-container");
 
-        // // Get the current event
-        // const currentEvent = events[currentIndex];
+  //       // // Get the current event
+  //       // const currentEvent = events[currentIndex];
 
-        // // Update the content of the event container
-        // eventContainer.innerHTML = `
-        //     <section id="event-container" class="hero" style="background-image: url('${currentEvent.image}');">
+  //       // // Update the content of the event container
+  //       // eventContainer.innerHTML = `
+  //       //     <section id="event-container" class="hero" style="background-image: url('${currentEvent.image}');">
                 
-        //         <h2>${currentEvent.title}</h2>
-        //         <p>${currentEvent.subtitle}</p>
-        //         <a class="cta-button" href="#">Купить билет</a>
-        //     </section>
-        // `;
+  //       //         <h2>${currentEvent.title}</h2>
+  //       //         <p>${currentEvent.subtitle}</p>
+  //       //         <a class="cta-button" href="#">Купить билет</a>
+  //       //     </section>
+  //       // `;
 
-        // // Increment the index for the next event
-        currentIndex = (currentIndex + 1) % events.length;
-    }
+  //       // // Increment the index for the next event
+  //       currentIndex = (currentIndex + 1) % events.length;
+  //   }
 
-    let currentEvent = events[0]
+    // let currentEvent = events[0]
+    // let currentEvent = {}
 
-  onMount(async() => {
-    // Set an interval to update the event every 5 seconds (5000 milliseconds)
-    setInterval(updateEvent, 1000);
+  // onMount(async() => {
+  //   // Set an interval to update the event every 5 seconds (5000 milliseconds)
+  //   setInterval(updateEvent, 1000);
   
-    // Initial call to display the first event
-    // updateEvent();
-  })        
+  //   // Initial call to display the first event
+  //   // updateEvent();
+  // })        
     
 </script>
 
@@ -78,7 +106,7 @@
               <p>
                   {currentEvent.subtitle}
               </p>
-              <a class="cta-button" href="#">Buy Tickets</a>
+              <a class="cta-button" href="#">Buy Tickets {currentEvent.price}$</a>
           </div>
       </section>
         
@@ -100,7 +128,7 @@
             <div class="featured-events">
                 <!-- Event Cards (Replace with your own content) -->
                 <div class="event-card">
-                    <img class="event-image" src="event1.jpg" alt="Event 1">
+                    <!-- <img class="event-image" src="event1.jpg" alt="Event 1"> -->
                     <div class="event-details">
                         <h3>Event 1</h3>
                         <p>Date: January 1, 2023</p>
@@ -110,7 +138,7 @@
                 </div>
     
                 <div class="event-card">
-                    <img class="event-image" src="event2.jpg" alt="Event 2">
+                    <!-- <img class="event-image" src="event2.jpg" alt="Event 2"> -->
                     <div class="event-details">
                         <h3>Event 2</h3>
                         <p>Date: February 14, 2023</p>
